@@ -19,8 +19,18 @@ router
     .route ('/:id')
     // @route:   GET api/talents/:id
     // @desc:    find one talent on DB
-    // @access:  Public
+    // @access:  Public (should be private if auth in place)
     .get(talentCtrls.getOneTalent)
+
+    // @route:   PUT api/talents/:id
+    // @desc:    edit info of one talent on DB
+    // @access:  Public (should be private if auth in place)
+    .put(talentCtrls.updateOneTalent)
+
+    // @route:   DELETE api/talents/:id
+    // @desc:    delete one talent from DB
+    // @access:  Public (should be private if auth in place)
+    .delete(talentCtrls.deleteOneTalent)
 
 
 

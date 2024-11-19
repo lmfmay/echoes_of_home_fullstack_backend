@@ -31,4 +31,24 @@ async function getOneTalent(req,res){
     }
 }
 
-export default {getAllTalent, createTalent, getOneTalent}
+async function updateOneTalent(req,res){
+    try {
+        let updatedTalent = await Talent.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        res.json(updatedTalent);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({msg: 'Server error'});
+    }
+}
+
+async function deleteOneTalent(req,res) {
+    try {
+        await Talent.findByIdAndDelete(req.params.id);
+        res.json({msg: 'Talent deleted'});
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({msg: 'Server error'});
+    }
+}
+
+export default {getAllTalent, createTalent, getOneTalent, updateOneTalent, deleteOneTalent}
