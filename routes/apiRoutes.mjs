@@ -8,6 +8,6 @@ const router = express.Router();
 
 router
     .route("/")
-    .get(apiCtrl.getAIVoices);
+    .get(apiCtrl.getAIVoices)
 
 export default router;
