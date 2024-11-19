@@ -23,6 +23,10 @@ const talents = [
         languages: [{
             language: "english",
             accent: "american",
+        },
+        {
+            language: "mandarin",
+            accent: "american",
         }]
     },
     {

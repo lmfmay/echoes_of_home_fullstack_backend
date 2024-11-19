@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/conn.mjs';
 import apiRoutes from './routes/apiRoutes.mjs';
-import talentRoutes from './routes/talentRoutes.mjs'
+import talentRoutes from './routes/talentRoutes.mjs';
 
 //setups
 const app = express();
@@ -19,9 +19,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//.env variables
-const userID = process.env.USER_ID;
-const apiKey = process.env.API_KEY;
 
 //Routes
 app.use("/api/audioProfiles", apiRoutes); //get list of prebuilt voices from PlayHT API
