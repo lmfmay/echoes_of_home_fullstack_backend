@@ -9,12 +9,12 @@ import mongoose from "mongoose";
 //     size: { type: Number }, // File size in bytes
 //   });
 
-const projectSchema = new mongoose.Schema({
+export const projectSchema = new mongoose.Schema({
     title: { type: String },
     //file: { type: [CloudinaryFileSchema] },
     description: { type: String },
     category: { type: String },
-    favorite: {type: Boolean},
+    favorite: {type: Boolean },
     })
 
 export default mongoose.model('Project', projectSchema);
